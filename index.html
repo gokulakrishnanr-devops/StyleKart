@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>StyleKart</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">StyleKart</div>
+  <div class="nav-links">
+    <span onclick="filterCategory('All')">All</span>
+    <span onclick="filterCategory('Dress')">Dresses</span>
+    <span onclick="filterCategory('Top')">Tops</span>
+    <span onclick="filterCategory('Jeans')">Jeans</span>
+    <span onclick="toggleCart()">Bag (<span id="cartCount">0</span>)</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Flat 40% Off</h1>
+</section>
+
+<div class="container">
+  <aside class="sidebar">
+    <h3>Categories</h3>
+    <button onclick="filterCategory('Dress')">Dresses</button>
+    <button onclick="filterCategory('Top')">Tops</button>
+    <button onclick="filterCategory('Jeans')">Jeans</button>
+  </aside>
+
+  <main id="products" class="products"></main>
+</div>
+
+<!-- Product Modal -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <img id="modalImg">
+    <div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalPrice"></p>
+      <button class="btn" onclick="addToCart(activeProduct)">Add to Bag</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Panel -->
+<div id="cartPanel" class="cart-panel">
+  <h3>Your Bag</h3>
+  <div id="cartItems"></div>
+  <div class="total">Total: ₹ <span id="cartTotal">0</span></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
